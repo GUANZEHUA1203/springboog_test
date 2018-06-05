@@ -1,0 +1,222 @@
+2018-06-05 14:12:44.004  INFO 8884 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8884 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:12:44.005  INFO 8884 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:12:45.557  INFO 8884 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:12:45.557  INFO 8884 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:12:45.643  INFO 8884 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:12:45.920  WARN 8884 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'roleServices' defined in file [D:\workspace\springboot_test\target\classes\com\gzh\springboot\dao\RoleServices.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+2018-06-05 14:12:45.922  INFO 8884 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-05 14:12:45.934  WARN 8884 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:40)
+2018-06-05 14:12:45.946 ERROR 8884 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'roleServices' defined in file [D:\workspace\springboot_test\target\classes\com\gzh\springboot\dao\RoleServices.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1634) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at com.gzh.springboot.IceEquiApplication.main(IceEquiApplication.java:28) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+Caused by: java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.util.Assert.notNull(Assert.java:134) ~[spring-core-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.mybatis.spring.support.SqlSessionDaoSupport.checkDaoConfig(SqlSessionDaoSupport.java:74) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:73) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	... 21 common frames omitted
+
+2018-06-05 14:16:41.679  INFO 8616 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8616 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:16:41.680  INFO 8616 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:16:43.228  INFO 8616 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:16:43.229  INFO 8616 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:16:43.316  INFO 8616 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:16:43.438  WARN 8616 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'roleServicesImpl': Unsatisfied dependency expressed through field 'roleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'roleMapper' defined in file [D:\workspace\springboot_test\target\classes\com\gzh\springboot\dao\RoleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+2018-06-05 14:16:43.439  INFO 8616 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-05 14:16:43.452  WARN 8616 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:40)
+2018-06-05 14:16:43.463 ERROR 8616 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'roleServicesImpl': Unsatisfied dependency expressed through field 'roleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'roleMapper' defined in file [D:\workspace\springboot_test\target\classes\com\gzh\springboot\dao\RoleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1272) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+	at com.gzh.springboot.IceEquiApplication.main(IceEquiApplication.java:28) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.13.BUILD-SNAPSHOT.jar:1.5.13.BUILD-SNAPSHOT]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'roleMapper' defined in file [D:\workspace\springboot_test\target\classes\com\gzh\springboot\dao\RoleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1634) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+	at org.springframework.util.Assert.notNull(Assert.java:134) ~[spring-core-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.mybatis.spring.support.SqlSessionDaoSupport.checkDaoConfig(SqlSessionDaoSupport.java:74) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:73) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630) ~[spring-beans-4.3.17.BUILD-SNAPSHOT.jar:4.3.17.BUILD-SNAPSHOT]
+	... 34 common frames omitted
+
+2018-06-05 14:18:02.837  INFO 6656 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 6656 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:18:02.838  INFO 6656 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:18:04.478  INFO 6656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:18:04.479  INFO 6656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:18:04.561  INFO 6656 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:18:05.875  WARN 6656 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:18:06.114  INFO 6656 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 3.495 seconds (JVM running for 3.832)
+2018-06-05 14:18:48.726  INFO 8028 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8028 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:18:48.727  INFO 8028 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:18:50.353  INFO 8028 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:18:50.354  INFO 8028 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:18:50.440  INFO 8028 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:18:51.622  WARN 8028 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:18:51.816  INFO 8028 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 3.308 seconds (JVM running for 3.641)
+2018-06-05 14:24:06.904  INFO 992 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 992 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:24:06.905  INFO 992 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:24:08.613  INFO 992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:24:08.614  INFO 992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:24:08.698  INFO 992 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:24:09.902  WARN 992 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:24:10.095  INFO 992 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 3.405 seconds (JVM running for 3.766)
+2018-06-05 14:24:36.703  INFO 992 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-05 14:24:36.738  WARN 992 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'dispatcherServlet'
+2018-06-05 14:24:36.784  WARN 992 --- [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcherServlet'
+2018-06-05 14:27:17.833  INFO 992 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 992 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:27:17.833  INFO 992 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:27:18.208  INFO 992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:27:18.209  INFO 992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:27:18.224  INFO 992 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:27:18.466  WARN 992 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:27:18.533  INFO 992 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 0.737 seconds (JVM running for 192.188)
+2018-06-05 14:33:02.275  INFO 8532 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8532 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:33:02.275  INFO 8532 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:33:03.946  INFO 8532 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:33:03.946  INFO 8532 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:33:04.029  INFO 8532 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:33:05.305  WARN 8532 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:33:05.596  INFO 8532 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 3.54 seconds (JVM running for 3.879)
+2018-06-05 14:33:08.608  INFO 8532 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-05 14:33:08.724  INFO 8532 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-06-05 14:33:36.783  INFO 9168 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 9168 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:33:36.784  INFO 9168 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:33:38.420  INFO 9168 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:33:38.420  INFO 9168 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:33:38.504  INFO 9168 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:33:39.660  WARN 9168 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:33:39.843  INFO 9168 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 3.281 seconds (JVM running for 3.615)
+2018-06-05 14:33:46.311  INFO 9168 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-05 14:33:46.405  INFO 9168 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-06-05 14:34:24.328  INFO 9168 --- [Thread-6] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-06-05 14:34:24.550  INFO 9168 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 9168 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:34:24.550  INFO 9168 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:34:24.897  INFO 9168 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:34:24.898  INFO 9168 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:34:24.937  INFO 9168 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:34:25.186  WARN 9168 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:34:25.262  INFO 9168 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 0.747 seconds (JVM running for 49.03)
+2018-06-05 14:34:31.381  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8608 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:34:31.382  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:34:32.991  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:34:32.991  INFO 8608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:34:33.072  INFO 8608 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:34:34.192  WARN 8608 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:34:34.373  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 3.207 seconds (JVM running for 3.547)
+2018-06-05 14:34:40.612  INFO 8608 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-05 14:34:40.723  INFO 8608 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-06-05 14:36:18.467  INFO 8608 --- [Thread-6] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-06-05 14:36:18.700  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8608 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:36:18.700  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:36:19.202  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:36:19.202  INFO 8608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:36:19.238  INFO 8608 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:36:19.579  WARN 8608 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:36:19.659  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 0.996 seconds (JVM running for 108.825)
+2018-06-05 14:36:30.584  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8608 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:36:30.584  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:36:30.884  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:36:30.885  INFO 8608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:36:30.896  INFO 8608 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:36:30.948  WARN 8608 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController': Unsatisfied dependency expressed through field 'roleServices'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'roleServicesImpl': Unsatisfied dependency expressed through field 'roleMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'roleMapper' defined in file [D:\workspace\springboot_test\target\classes\com\gzh\springboot\dao\RoleMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Generic.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database url for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2018-06-05 14:36:30.948  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-05 14:36:30.956 ERROR 8608 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-06-05 14:36:54.071  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8608 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:36:54.071  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:36:54.364  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:36:54.365  INFO 8608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:36:54.392  INFO 8608 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:36:54.600  WARN 8608 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:36:54.662  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 0.645 seconds (JVM running for 143.825)
+2018-06-05 14:36:59.413  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8608 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:36:59.413  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:36:59.694  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:36:59.695  INFO 8608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:36:59.706  INFO 8608 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:36:59.875  WARN 8608 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:36:59.933  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 0.551 seconds (JVM running for 149.096)
+2018-06-05 14:37:02.513  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Starting IceEquiApplication on SKY-20171212NWR with PID 8608 (D:\workspace\springboot_test\target\classes started by Administrator in D:\workspace\springboot_test)
+2018-06-05 14:37:02.513  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : No active profile set, falling back to default profiles: default
+2018-06-05 14:37:02.804  INFO 8608 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-05 14:37:02.805  INFO 8608 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-06-05 14:37:02.816  INFO 8608 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2018-06-05 14:37:02.974  WARN 8608 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-06-05 14:37:03.027  INFO 8608 --- [restartedMain] com.gzh.springboot.IceEquiApplication    : Started IceEquiApplication in 0.542 seconds (JVM running for 152.19)

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ice.dao.IDeviceMapper">
+	<update id="update" parameterType="java.util.Map">
+		UPDATE t_device
+		<trim prefix="set" suffixOverrides=",">
+			<if test=" appVersion != null and appVersion !='' ">
+				appVersion = #{appVersion},
+			</if>
+			<if test=" deviceName != null and deviceName !='' ">
+				deviceName = #{deviceName},
+			</if>
+			<if test=" volume != -1  ">
+				volume = #{volume},
+			</if>
+			<if test="sipAction != -1">
+				sipAction = #{sipAction},
+			</if>
+			<if test="deviceType != -1">
+				deviceType = #{deviceType},
+			</if>
+			<if test="deviceMac != null ">
+				deviceMac = #{deviceMac},
+			</if>
+			<if test="activationTime != null">
+				activationTime = #{activationTime},
+				deviceState = 1,
+			</if>
+			<if test="restartTime != null">
+				restartTime = #{restartTime},
+			</if>
+			<if test="handshakeTime != null">
+				handshakeTime = #{handshakeTime},
+			</if>
+			<if test="sysnchronizationTime != null">
+				sysnchronizationTime = #{sysnchronizationTime},
+			</if>
+			<if test="demension != null">
+				demension = #{demension},
+			</if>
+			<if test="devicePass != null">
+				devicePass = #{devicePass},
+			</if>
+		</trim>
+		where deviceId = #{deviceId,jdbcType=INTEGER}
+	</update>
+
+	<update id="delete" parameterType="java.util.List">
+		UPDATE t_device set delState = 1
+		WHERE deviceId IN
+		<foreach collection="list" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+
+	<update id="updateVolume" parameterType="java.util.Map">
+		UPDATE t_device set volume = #{volume}
+		WHERE deviceId IN
+		<foreach collection="list" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+	<insert id="insert" parameterType="java.util.Map" >
+		INSERT INTO
+		t_device (deviceId,deviceName,iceVillageId,bulid,buildType,categoryId,sid,sipAction,deviceMac,devicePhone,deviceType,devicePass,masterId)
+		VALUES
+		(#{deviceId},#{deviceName},#{villageId},#{build},#{buildType},#{categoryId},#{sid},#{sipAction},#{deviceMac},#{devicePhone},#{deviceType},#{devicePass},#{masterId})
+	</insert>
+
+	<select id="selectDeviceList" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		SELECT * FROM t_device td LEFT JOIN t_device_sp tds ON td.sid =
+		tds.sid where td.delState = 0
+		<include refid="selectDeviceWhere"></include>
+		LIMIT #{pageNo},#{pageSize}
+	</select>
+
+	<select id="selectDeviceListCount" parameterType="java.util.Map"
+		resultType="integer">
+		SELECT count(1) FROM t_device td LEFT JOIN t_device_sp tds ON td.sid =
+		tds.sid where td.delState = 0
+		<include refid="selectDeviceWhere"></include>
+	</select>
+
+	<sql id="selectDeviceWhere">
+		<if test="villageId != null ">
+			AND td.iceVillageId = #{villageId}
+		</if>
+		<if test="openSp != -1 ">
+			AND td.sid = #{openSp}
+		</if>
+		<if test="list != null and list.size()> 0">
+			AND td.deviceId IN
+			<foreach collection="list" index="index" item="item" open="("
+				separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+	</sql>
+	
+	
+    <select id="selectDeviceList2" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		 SELECT t.deviceId, t.iceVillageId,t.deviceName, CASE WHEN t.buildType=1 THEN (CONCAT(t.deviceName,'(围墙机)') ) ELSE (CONCAT(t.deviceName,'(门口机)')) END AS localtion,CASE WHEN t.deviceState = 1 THEN '正常'  WHEN t.deviceState = 2 THEN ' 连接超时'  WHEN t.deviceState = 3 THEN ' 门未关'  ELSE '未激活' END  AS deviceState,CASE WHEN t.categoryId = 1 THEN '从机设备' ELSE '独立设备' END  as category,t.demension ,s.spName FROM t_device t LEFT JOIN t_device_sp s ON t.sid = s.sid
+		 WHERE t.delState = 0
+		<include refid="selectDeviceWhere2"></include>
+		LIMIT #{pageNo},#{pageSize}
+	</select>
+
+	<select id="selectDeviceListCount2" parameterType="java.util.Map" resultType="integer">
+		SELECT count(1) FROM t_device t LEFT JOIN t_device_sp s ON t.sid =
+		s.sid where t.delState = 0
+		<include refid="selectDeviceWhere2"></include>
+	</select>
+
+	<sql id="selectDeviceWhere2">
+		<if test="villageId != null and villageId !=''">
+		  AND t.iceVillageId = #{villageId}
+		</if>
+		<if test="deviceType != -1">
+		AND t.deviceType = #{deviceType}
+		</if>
+	    <if test="deviceState != -1"> AND t.deviceState= #{deviceState}</if>
+		<if test="categoryId != -1">
+		AND t.categoryId= #{categoryId}
+		</if>
+		<if test="locations != null and locations !=''">
+		  AND t.deviceName like concat( '%','#{locations}','%' ) 
+		</if>
+	</sql>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="selectDeviceErrorList" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		SELECT
+		tdr.deviceId,tdr.errorId,tdr.content,tdr.createTime,tdr.errorState,td.deviceName
+		FROM t_device_error tdr LEFT JOIN t_device td ON tdr.deviceId =
+		td.deviceId
+		WHERE  
+		<include refid="selectDeviceErrorListWhere"></include>
+		LIMIT #{pageNo},#{pageSize}
+	</select>
+	<select id="selectDeviceErrorListCount" parameterType="java.util.Map"
+		resultType="integer">
+		SELECT count(1) FROM t_device_error tdr LEFT JOIN t_device td ON
+		tdr.deviceId = td.deviceId WHERE  
+		<include refid="selectDeviceErrorListWhere"></include>
+	</select>
+	<sql id="selectDeviceErrorListWhere">
+		<if test="deviceId != 0">tdr.deviceId = #{deviceId}</if>
+		<if test="state != -1">tdr.errorState =#{state}</if>
+		<if test="content !=null and content != ''"> tdr.content like concat(concat("%",#{content}),"%") </if>
+		<if test="beginTime!=null and beginTime!=''">
+			AND tdr.createTime &gt;=#{beginTime}
+		</if>
+		<if test="endTime!=null and endTime!=''">
+			AND tdr.createTime &lt;=#{endTime}
+		</if>
+	</sql>
+
+    <select id="selectDeviceActiveCount"   parameterType="java.util.List" resultType="integer">
+		SELECT COUNT(1) FROM t_device td WHERE  td.deviceState != 0 AND td.deviceId  IN
+		<foreach collection="list" index="index" item="item" open="("
+				separator="," close=")">
+				#{item}
+			</foreach>
+    </select>
+    <select id="checkDeviceMirror" parameterType="java.util.Map" resultType="integer">
+       SELECT COUNT(1) FROM t_device_mirror  t WHERE t.deviceId=#{deviceId} AND t.firType =#{firType}  AND t.firVersion =#{firVersion} 
+    </select>
+
+</mapper>
